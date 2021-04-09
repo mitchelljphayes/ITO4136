@@ -1,6 +1,6 @@
 public class CustomStack {
     
-    private Node top;
+    private ListNode top;
     private int size;
 
     public CustomStack()
@@ -9,7 +9,18 @@ public class CustomStack {
         size = 0;
     }
     
-    public void push(Node node)
+    public void print()
+    {
+        ListNode top = this.pop();
+        if (!this.isEmpty())
+        {
+            System.out.print(top.getData() + ", ");
+            this.print();
+        }
+        this.push(top);
+    }
+
+    public void push(ListNode node)
     {
         if (top != null)
         {
@@ -19,9 +30,33 @@ public class CustomStack {
         size++;
     }
 
-    public Node pop()
+    public void push(String value)
     {
-        Node freeNode = top;
+        ListNode node = new ListNode();
+        node.setData(value);
+        if (top != null)
+        {
+            node.setNext(top);
+        }
+        top = node;
+        size++;
+    }
+
+    public void push(char value)
+    {
+        ListNode node = new ListNode();
+        node.setData("" + value);
+        if (top != null)
+        {
+            node.setNext(top);
+        }
+        top = node;
+        size++;
+    }
+
+    public ListNode pop()
+    {
+        ListNode freeNode = top;
         if (size > 1)
         {
             top = freeNode.getNext();
@@ -31,7 +66,7 @@ public class CustomStack {
         return freeNode;
     }
 
-    public Node peek()
+    public ListNode peek()
     {
         return top; 
     }
@@ -41,7 +76,7 @@ public class CustomStack {
         return size;
     }
 
-    public boolean empty()
+    public boolean isEmpty()
     {
         boolean isEmpty = false;
         if (size == 0)

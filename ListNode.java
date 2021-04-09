@@ -1,17 +1,17 @@
-public class Node {
+public class ListNode {
      
     private String data; 
-    private Node next;
-    private Node previous;
+    private ListNode previous;
+    private ListNode next;
     
-    public Node()
+    public ListNode()
     {
         data = ""; 
-        next = null;
         previous = null;
+        next = null;
     }
 
-    public Node(String d) 
+    public ListNode(String d) 
     { 
         data = d; 
         next = null; 
@@ -22,14 +22,16 @@ public class Node {
         return data;
     }
 
-    public Node getNext()
+    public ListNode getNext()
     {
         return next;
     }
 
-    public Node getPrevious()
+    public ListNode getPrevious()
     {
         return previous;
+    }
+
     }
 
     public void setData(String d)
@@ -37,15 +39,14 @@ public class Node {
         data = d;
     }
 
-    public void setNext(Node n)
+    public void setNext(ListNode n)
     {
         next = n;
     }
 
-    public void setPrevious(Node n)
+    public void setPrevious(ListNode n)
     {
         previous = n;
     }
 
-    
 }

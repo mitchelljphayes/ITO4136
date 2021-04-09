@@ -13,7 +13,7 @@ public class StringGenerator {
         Random random = new Random();
         for(int i = 0; i < numElements; i++)
         {
-            char[] word = new char[random.nextInt(8)+3]; // words of length 3 through 10. (1 and 2 letter words are boring.)
+            char[] word = new char[random.nextInt(16)+4];
             for(int j = 0; j < word.length; j++)
             {
                 word[j] = (char)('a' + random.nextInt(26));
@@ -22,4 +22,17 @@ public class StringGenerator {
         }
         return stringList;
     }
+
+    public String word(int numLetters)
+    {
+        Random random = new Random();
+        char[] word = new char[numLetters];
+        for(int j = 0; j < word.length; j++)
+        {
+            word[j] = (char)('a' + random.nextInt(26));
+        }
+        String newWord = new String(word);
+        return newWord;
+    }
+
 }

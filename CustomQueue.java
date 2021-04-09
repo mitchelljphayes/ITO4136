@@ -1,7 +1,7 @@
 public class CustomQueue {
     
-    private Node first;
-    private Node last;
+    private ListNode first;
+    private ListNode last;
 
     public CustomQueue()
     {
@@ -15,9 +15,9 @@ public class CustomQueue {
         last = null;
     }
     
-    public Node dequeue()
+    public ListNode dequeue()
     {
-        Node freeNode = first;
+        ListNode freeNode = first;
         first = freeNode.getPrevious();
         first.setNext(null);
         freeNode.setNext(null);
@@ -28,7 +28,7 @@ public class CustomQueue {
     public String display()
     {
         String display = "";
-        Node itr = first;
+        ListNode itr = first;
         while (itr != last)
         {
             String word = itr.getData();
@@ -41,7 +41,7 @@ public class CustomQueue {
 
     public void enqueue(String value)
     {
-        Node newNode = new Node();
+        ListNode newNode = new ListNode();
         newNode.setData(value);
 
         if (last != null)
@@ -56,7 +56,7 @@ public class CustomQueue {
         }
 
     }
-    public void enqueue(Node node)
+    public void enqueue(ListNode node)
     {
         if (last != null)
         {
@@ -71,7 +71,7 @@ public class CustomQueue {
 
     }
 
-    public Node first()
+    public ListNode first()
     {
         return first;
     }
@@ -92,7 +92,7 @@ public class CustomQueue {
     public int size()
     {
         int counter = 0;
-        Node itr = new Node();
+        ListNode itr = new ListNode();
         itr = last;
         do
         {

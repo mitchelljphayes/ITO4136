@@ -22,16 +22,16 @@ public class ReverseQueue {
         int queSize = queue.size();
         for (int i = (queSize - 1); i > 0; i--)
         {
-            Node selection = queue.dequeue();
+            ListNode selection = queue.dequeue();
             for (int j = 0; j <= (queSize - 1); j++)
             {
                 
-                Node requeueNode = queue.dequeue();
+                ListNode requeueListNode = queue.dequeue();
                 if (j == i)
                 {
                     queue.enqueue(selection);
                 }
-                queue.enqueue(requeueNode);
+                queue.enqueue(requeueListNode);
                 if ((i == 1) && j == (queSize - 2))
                 {
                     break;
