@@ -1,8 +1,8 @@
 public class CustomSinglyLinkedList
 {
 
-    private Node head;
-    private Node tail;
+    private ListNode head;
+    private ListNode tail;
     private int size;
 
     public CustomSinglyLinkedList()
@@ -14,7 +14,7 @@ public class CustomSinglyLinkedList
 
     public void addFirst(String val)
     {
-        Node newNode = new Node();
+        ListNode newNode = new ListNode();
         newNode.setData(val);
         newNode.setNext(head);
         head = newNode;
@@ -29,7 +29,7 @@ public class CustomSinglyLinkedList
     {
         if (head != null)
         {        
-            Node newNode = new Node();
+            ListNode newNode = new ListNode();
             newNode.setData(val);
             newNode.setNext(null);
             tail.setNext(newNode);
@@ -46,11 +46,11 @@ public class CustomSinglyLinkedList
     {
         if (head != null)
         {
-            Node newNode = new Node();
+            ListNode newNode = new ListNode();
             newNode.setData(val);
             if (index <= size)
             {
-                Node indexNode = findIndexNode(index);
+                ListNode indexNode = findIndexNode(index);
                 newNode.setNext(indexNode.getNext());
                 indexNode.setNext(newNode);
                 size++;
@@ -67,7 +67,7 @@ public class CustomSinglyLinkedList
         System.out.println("The list contains");
         if (head != null)
         {
-            Node itrNode = head;
+            ListNode itrNode = head;
             do
             {
                 System.out.println(itrNode.getData());
@@ -80,13 +80,13 @@ public class CustomSinglyLinkedList
         }
     }
 
-    public Node findIndexNode(int index)
+    public ListNode findIndexNode(int index)
     {
         //should probably hande this by throwing an exception when head == null rather than using the if statement.
         if (head != null)
         {
             int counter = 0;
-            Node iteratorNode = head;
+            ListNode iteratorNode = head;
             do
             {    
                 if (counter + 1 == index)
@@ -103,12 +103,12 @@ public class CustomSinglyLinkedList
         return head;
     }
 
-    public Node getHead()
+    public ListNode getHead()
     {
         return head;
     }
 
-    public Node getTail()
+    public ListNode getTail()
     {
         return tail;
     }
@@ -120,7 +120,7 @@ public class CustomSinglyLinkedList
 
     public void removeNode(int index)
     {
-        Node nodeBefore = findIndexNode(index - 1);
+        ListNode nodeBefore = findIndexNode(index - 1);
         nodeBefore.setNext(nodeBefore.getNext().getNext());
         size--;
     }
@@ -130,7 +130,7 @@ public class CustomSinglyLinkedList
         if (head != null)
         {
             int counter = 1;
-            Node iteratorNode = head;
+            ListNode iteratorNode = head;
             do
             {    
                 iteratorNode = iteratorNode.getNext();

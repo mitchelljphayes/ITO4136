@@ -4,13 +4,13 @@ public class SortStack {
     {
         if (!stack.isEmpty())
         {
-            Node temp = stack.pop();
+            ListNode temp = stack.pop();
             sortStack(stack);
             sortedInsert(stack, temp);
         }
     }
 
-    public static void sortedInsert(CustomStack stack, Node node)
+    public static void sortedInsert(CustomStack stack, ListNode node)
     {
         if (stack.isEmpty() || ((Integer.parseInt(node.getData()) > Integer.parseInt(stack.peek().getData()))))
         {
@@ -18,7 +18,7 @@ public class SortStack {
         }
         else
         {
-            Node temp = stack.pop();
+            ListNode temp = stack.pop();
             sortedInsert(stack, node);
             stack.push(temp);
         }

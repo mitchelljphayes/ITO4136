@@ -32,8 +32,6 @@ public class ListNode {
         return previous;
     }
 
-    }
-
     public void setData(String d)
     {
         data = d;
