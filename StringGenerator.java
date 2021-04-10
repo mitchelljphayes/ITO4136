@@ -35,4 +35,35 @@ public class StringGenerator {
         return newWord;
     }
 
+    public String sometimesPalindromes()
+    {
+        Random random = new Random();
+        char[] word = new char[(random.nextInt(14)+3)];
+        int choice = random.nextInt(10);
+        if (choice <= 3)
+        {
+            for (int j = 0; j < word.length; j++)
+            {
+                if (j <= ((word.length - 1) / 2))
+                {
+                    word[j] = (char)('a' + random.nextInt(26));
+                    continue;
+                }
+                else 
+                {
+                    word[j] = word[((word.length - 1) - j)];
+                }
+            }
+        }
+        else 
+        {
+            for(int j = 0; j < word.length; j++)
+            {
+                word[j] = (char)('a' + random.nextInt(26));
+            }
+        }
+        String newWord = new String(word);
+        return newWord;
+    }
+
 }

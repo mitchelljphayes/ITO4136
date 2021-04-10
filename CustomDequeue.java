@@ -1,9 +1,9 @@
-public class CustomQueue {
+public class CustomDequeue {
     
     private ListNode first;
     private ListNode last;
 
-    public CustomQueue()
+    public CustomDequeue()
     {
         first = null;
         last = null;
@@ -15,11 +15,27 @@ public class CustomQueue {
         last = null;
     }
     
-    public ListNode dequeue()
+    public ListNode dequeueFront()
     {
         ListNode freeNode = first;
-        first = freeNode.getPrevious();
+        if (last.getNext() != null)
+        {
+            first = freeNode.getPrevious();
+        }
         first.setNext(null);
+        freeNode.setNext(null);
+        freeNode.setPrevious(null);
+        return freeNode;
+    }
+
+    public ListNode dequeueBack()
+    {
+        ListNode freeNode = last;
+        if (last.getNext() != null)
+        {
+            last = freeNode.getNext();
+        }
+        last.setPrevious(null);
         freeNode.setNext(null);
         freeNode.setPrevious(null);
         return freeNode;
@@ -39,7 +55,7 @@ public class CustomQueue {
         return display;
     } 
 
-    public void enqueue(String value)
+    public void enqueueBack(String value)
     {
         ListNode newNode = new ListNode();
         newNode.setData(value);
@@ -54,9 +70,9 @@ public class CustomQueue {
         {
             first = newNode;
         }
-
     }
-    public void enqueue(ListNode node)
+
+    public void enqueueBack(ListNode node)
     {
         if (last != null)
         {
@@ -68,12 +84,47 @@ public class CustomQueue {
         {
             first = node;
         }
-
     }
 
-    public ListNode first()
+    public void enqueueFront(String value)
+    {
+        ListNode newNode = new ListNode();
+        newNode.setData(value);
+
+        if (first != null)
+        {
+            newNode.setPrevious(first);
+            first.setNext(newNode);
+        }
+        first = newNode;
+        if (last == null)
+        {
+            last = newNode;
+        }
+    }
+
+    public void enqueueFront(ListNode node)
+    {
+        if (first != null)
+        {
+            node.setPrevious(first);
+            first.setNext(node);
+        }
+        first = node;
+        if (last == null)
+        {
+            last = node;
+        }
+    }
+
+    public ListNode getFront()
     {
         return first;
+    }
+
+    public ListNode getBack()
+    {
+        return last;
     }
 
     public boolean isEmpty()
@@ -94,12 +145,14 @@ public class CustomQueue {
         int counter = 1;
         ListNode itr = new ListNode();
         itr = last;
-        do
+        while (itr.getNext() != null)
         {
-            itr = itr.getNext();
-            counter++;
-        } while (itr.getNext() != null);
-
+            if (itr.getNext() != null)
+            {
+                itr = itr.getNext();
+                counter++;
+            }
+        }
         return counter;
     }
 
