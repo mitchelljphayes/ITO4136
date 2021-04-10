@@ -6,7 +6,6 @@ public class Palindrome {
         Boolean isPalindrome = false;
         while (!deq.isEmpty())
         {
-            System.out.println(deq.size());
             if (deq.size() > 1)
             {
                 ListNode front = deq.dequeueFront();

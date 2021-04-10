@@ -62,22 +62,30 @@ public class CustomSinglyLinkedList
         }
     }
 
-    public void display()
+    public String display()
     {
-        System.out.println("The list contains");
+        String displayString = "List Data:";
         if (head != null)
         {
             ListNode itrNode = head;
-            do
+            while (true)
             {
-                System.out.println(itrNode.getData());
-                itrNode = itrNode.getNext();
-            } while(itrNode.getNext() != null);
+                displayString += (" " + itrNode.getData());
+                if (itrNode.getNext() != null)
+                {
+                    itrNode = itrNode.getNext();
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
         else
         {
-            System.out.println("List empty! Ignoring!");
+            displayString = "List empty! Ignoring!";
         }
+        return displayString;
     }
 
     public ListNode findIndexNode(int index)
@@ -123,6 +131,11 @@ public class CustomSinglyLinkedList
         ListNode nodeBefore = findIndexNode(index - 1);
         nodeBefore.setNext(nodeBefore.getNext().getNext());
         size--;
+    }
+
+    public void setHead(ListNode node)
+    {
+        head = node;
     }
 
     public void resize()
