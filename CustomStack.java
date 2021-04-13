@@ -12,9 +12,9 @@ public class CustomStack {
     public void print()
     {
         ListNode top = this.pop();
+        System.out.print(top.getData() + " ");
         if (!this.isEmpty())
         {
-            System.out.print(top.getData() + ", ");
             this.print();
         }
         this.push(top);
