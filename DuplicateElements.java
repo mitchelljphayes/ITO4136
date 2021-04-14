@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import utils.*;
+
 public class DuplicateElements {
     
     public static String duplicateFinder(int[] array, boolean[] plist)

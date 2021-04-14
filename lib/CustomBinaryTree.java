@@ -1,3 +1,5 @@
+package lib;
+
 public class CustomBinaryTree {
     
     private TreeNode root;

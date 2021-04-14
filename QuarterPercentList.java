@@ -1,5 +1,8 @@
 import java.util.Random;
 
+import utils.*;
+import lib.*;
+
 public class QuarterPercentList {
     
     public static void populate(CustomSinglyLinkedList list, String[] words)

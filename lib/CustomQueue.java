@@ -1,27 +1,40 @@
+package lib;
+
 public class CustomQueue {
     
     private ListNode first;
     private ListNode last;
+    private int size;
 
     public CustomQueue()
     {
         first = null;
         last = null;
+        size = 0;
     }
     
     public void clear()
     {
         first = null;
         last = null;
+        size = 0;
     }
     
     public ListNode dequeue()
     {
         ListNode freeNode = first;
-        first = freeNode.getPrevious();
+        if (size >= 2)
+        {
+            first = freeNode.getPrevious();
+        }
+        else
+        {
+            first.setPrevious(null);
+        }
         first.setNext(null);
         freeNode.setNext(null);
         freeNode.setPrevious(null);
+        size--;
         return freeNode;
     }
 
@@ -54,7 +67,7 @@ public class CustomQueue {
         {
             first = newNode;
         }
-
+        size++;
     }
     public void enqueue(ListNode node)
     {
@@ -68,7 +81,7 @@ public class CustomQueue {
         {
             first = node;
         }
-
+        size++;
     }
 
     public ListNode first()
@@ -78,7 +91,7 @@ public class CustomQueue {
 
     public boolean isEmpty()
     {
-        if (first == null)
+        if (size == 0)
         {
             return true;
         }
@@ -91,16 +104,7 @@ public class CustomQueue {
 
     public int size()
     {
-        int counter = 1;
-        ListNode itr = new ListNode();
-        itr = last;
-        do
-        {
-            itr = itr.getNext();
-            counter++;
-        } while (itr.getNext() != null);
-
-        return counter;
+        return size;
     }
 
 

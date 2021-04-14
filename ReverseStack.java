@@ -1,3 +1,6 @@
+import utils.*;
+import lib.*;
+
 public class ReverseStack {
     public static void reverseStack(CustomStack stack)
     {
