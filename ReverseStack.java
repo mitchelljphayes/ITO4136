@@ -10,10 +10,10 @@ public class ReverseStack {
         }
         ListNode temp = stack.pop();
         reverseStack(stack);
-        invertStack(stack,temp);
+        pushNodeBottom(stack,temp);
     }
 
-    public static void invertStack(CustomStack stack, ListNode node)
+    public static void pushNodeBottom(CustomStack stack, ListNode node)
     {
         if (stack.isEmpty())
         {
@@ -22,7 +22,7 @@ public class ReverseStack {
         else
         {
             ListNode temp = stack.pop();
-            invertStack(stack, node);
+            pushNodeBottom(stack, node);
             stack.push(temp);
         }
     }
@@ -36,11 +36,13 @@ public class ReverseStack {
         {
             stack.push(("" + listOfNums[i]));
         }
-        System.out.print("Unsorted Stack: ");
+        System.out.print("Oiginal Stack: ");
         stack.print();
         System.out.println();
+
         reverseStack(stack);
-        System.out.print("Sorted Stack: ");
+        
+        System.out.print("Reverse Stack: ");
         stack.print();
         System.out.println();
     }

@@ -3,29 +3,16 @@ import lib.*;
 
 public class Palindrome {
     
-
     public static boolean palindromeCheck(CustomDequeue deq)
     {
-        Boolean isPalindrome = false;
-        while (!deq.isEmpty())
+        Boolean isPalindrome = true;
+        while (deq.size() > 1)
         {
-            if (deq.size() > 1)
+            ListNode front = deq.dequeueFront();
+            ListNode back = deq.dequeueBack();  
+            if (!front.getData().equals(back.getData()))
             {
-                ListNode front = deq.dequeueFront();
-                ListNode back = deq.dequeueBack();  
-                if (front.getData().equals(back.getData()))
-                {
-                    isPalindrome = true;
-                    continue;
-                }
-                else
-                {
-                    isPalindrome = false;
-                    break;
-                }
-            }
-            else
-            {
+                isPalindrome = false;
                 break;
             }
         }
@@ -40,6 +27,7 @@ public class Palindrome {
             CustomDequeue deq = new CustomDequeue();
             StringGenerator sg = new StringGenerator();
             String word = new String(sg.sometimesPalindromes());
+            
             System.out.println(word);
             for (int i = 0; i < word.length(); i++)
             {

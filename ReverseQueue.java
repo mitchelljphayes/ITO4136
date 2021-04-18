@@ -1,6 +1,5 @@
 import java.util.*;
 
-//import utils.*;
 import lib.*;
 import utils.StringGenerator;
 
@@ -14,38 +13,14 @@ public class ReverseQueue {
         };
     }
 
-    public static void reverseQueueLooping(CustomQueue queue)
-    {
-        int queSize = queue.size();
-        for (int i = (queSize - 1); i > 0; i--)
-        {
-            ListNode selection = queue.dequeue();
-            for (int j = 0; j <= (queSize - 1); j++)
-            {
-                
-                ListNode requeueListNode = queue.dequeue();
-                if (j == i)
-                {
-                    queue.enqueue(selection);
-                    // j--;
-                }
-                queue.enqueue(requeueListNode);
-                if ((i == 1) && j == (queSize - 2))
-                {
-                    break;
-                }
-            }
-        }
-    }
-
-    public static void reverseQueueRecursive(CustomQueue queue)
+    public static void reverseQueue(CustomQueue queue)
     {
         if (queue.isEmpty())
         {
             return;
         }
         ListNode node = queue.dequeue();
-        reverseQueueRecursive(queue);    
+        reverseQueue(queue);    
         queue.enqueue(node);
     }
     
@@ -61,7 +36,7 @@ public class ReverseQueue {
         String[] words = sg.wordList(6);
         populate(queue, words);
         System.out.println(queue.display());
-        reverseQueueRecursive(queue);
+        reverseQueue(queue);
         System.out.println(queue.display());
         // sc.close();
     }

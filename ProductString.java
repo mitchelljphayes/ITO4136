@@ -6,8 +6,8 @@ public class ProductString {
     public static void main(String[] args)
     {
         Input in = new Input();
-        String numOne = new String(in.acceptStringInput("Please enter the first number between 0 and 100").trim());
-        String numTwo = new String(in.acceptStringInput("Please enter the second number between 0 and 100").trim());
+        String numOne = new String(in.acceptStringInput("Please enter the first number between 0 and 100"));
+        String numTwo = new String(in.acceptStringInput("Please enter the second number between 0 and 100"));
 
         int a1 = Character.getNumericValue(numOne.charAt(0));
         int a2;

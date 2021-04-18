@@ -1,5 +1,4 @@
 import java.util.Random;
-
 import utils.*;
 
 public class DuplicateElements {
@@ -8,25 +7,21 @@ public class DuplicateElements {
     {
         boolean dupsFound = false;
         String reportString = "Duplicates found: ";
-        // for each value in array
         for (int i = 0; i < array.length; i++)
         {
             int val = array[i];
-            if (plist[val] == false)
-            {
-                plist[val] = true;
-            }
-            else 
+            if (plist[val])
             {
                 dupsFound = true;
                 reportString += (val + " ");
+                continue; 
             }
+            plist[val] = true;
         }
         if (dupsFound == false)
         {
             reportString = "No duplicates found";
         }  
-        
         return reportString;
     }
     
