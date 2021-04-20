@@ -1,5 +1,11 @@
 package lib;
-
+/**
+ * Class which defines a custom implementation of a singly linked list.
+ * 
+ * @author Mitchell Hayes
+ * @since 19 April 2021
+ * @version 1.0
+ */
 public class CustomSinglyLinkedList
 {
 
@@ -7,6 +13,9 @@ public class CustomSinglyLinkedList
     private ListNode tail;
     private int size;
 
+    /**
+     * Default Constructor Method, sets size and all nodes to null.
+     */
     public CustomSinglyLinkedList()
     {
          head = null;
@@ -14,6 +23,10 @@ public class CustomSinglyLinkedList
          size = 0;
     }
 
+    /**
+     * method to add first node to linked list, takes a value and generates the node.
+     * @param val value of node to be added to list.
+     */
     public void addFirst(String val)
     {
         ListNode newNode = new ListNode();
@@ -27,6 +40,10 @@ public class CustomSinglyLinkedList
         size++;
     }
 
+    /**
+     * method to add last node to linked list, takes a value and generates the node.
+     * @param val value of node to be added to list.
+     */
     public void addLast(String val)
     {
         if (head != null)
@@ -44,6 +61,11 @@ public class CustomSinglyLinkedList
         }
     }
 
+    /**
+     * method to add node to a specified index of linked list, takes a value and generates the node.
+     * @param val value of node to be added to list.
+     * @param index position to add node. 
+     */
     public void addMiddle(String val, int index)
     {
         if (head != null)
@@ -64,6 +86,11 @@ public class CustomSinglyLinkedList
         }
     }
 
+    /**
+     * Method to return a string containing all values in the list. 
+     * 
+     * @return String containing all values in the list. 
+     */
     public String display()
     {
         String displayString = "List Data:";
@@ -85,11 +112,17 @@ public class CustomSinglyLinkedList
         }
         else
         {
-            displayString = "List empty! Ignoring!";
+            displayString = "List empty!";
         }
         return displayString;
     }
 
+    /**
+     * Method to find a node at a specific index, does not remove said node. 
+     * 
+     * @param index index to find node.
+     * @return Node at specified index. 
+     */
     public ListNode findIndexNode(int index)
     {
         //should probably hande this by throwing an exception when head == null rather than using the if statement.
@@ -113,21 +146,37 @@ public class CustomSinglyLinkedList
         return head;
     }
 
+    /**
+     * Returns the head of the list.
+     * @return Node at head.
+     */
     public ListNode getHead()
     {
         return head;
     }
 
+    /**
+     * Returns the tail of the list.
+     * @return Node at tail.
+     */
     public ListNode getTail()
     {
         return tail;
     }
 
+    /**
+     * Returns the size of the list.
+     * @return Int representing the number of nodes in list.
+     */
     public int getSize()
     {
         return size;
     }
 
+    /**
+     * removes a node from a specific index.
+     * @param index index of node to be removed.
+     */
     public void removeNode(int index)
     {
         ListNode nodeBefore = findIndexNode(index - 1);
@@ -135,29 +184,23 @@ public class CustomSinglyLinkedList
         size--;
     }
 
+    /**
+     * Sets a specific node to be the head of the linked list. If used incorrectlty could lose the rest of the list.
+     * @param node node to become the new head.
+     */
     public void setHead(ListNode node)
     {
         head = node;
     }
 
-    public void resize()
+    /**
+     * Sets a specific node to be the tail of the linked list. Important to do if things have been rearranged extensively.
+     * @param node node to become the new tail.
+     */
+    public void setTail(ListNode node)
     {
-        if (head != null)
-        {
-            int counter = 1;
-            ListNode iteratorNode = head;
-            do
-            {    
-                iteratorNode = iteratorNode.getNext();
-                counter++;
-            } while(iteratorNode.getNext() != null);
-            size = counter;
-            return;
-        }
-        else
-        {
-            size = 0;
-        }
+        tail = node;
     }
+
 }
 

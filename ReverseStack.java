@@ -8,9 +8,9 @@ public class ReverseStack {
         {
             return;
         }
-        ListNode temp = stack.pop();
+        ListNode node = stack.pop();
         reverseStack(stack);
-        pushNodeBottom(stack,temp);
+        pushNodeBottom(stack,node);
     }
 
     public static void pushNodeBottom(CustomStack stack, ListNode node)

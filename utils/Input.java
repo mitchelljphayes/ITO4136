@@ -1,5 +1,4 @@
 package utils;
-
 import java.util.Scanner;
 /**
 *Input Class which manages accepting user inputs for the program 
@@ -93,7 +92,7 @@ public class Input
     }
 
     /**
-    *Method to accept String inputs from user, exits program if user types quit
+    *Method to accept String inputs from user,
     *
     *@param s a String which displays instructions for the user 
     */

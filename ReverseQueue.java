@@ -1,5 +1,3 @@
-import java.util.*;
-
 import lib.*;
 import utils.StringGenerator;
 
@@ -33,7 +31,7 @@ public class ReverseQueue {
         // String input = sc.nextLine();
         // String[] words = input.split(" ");
         StringGenerator sg = new StringGenerator();
-        String[] words = sg.wordList(6);
+        String[] words = sg.createWordList(6);
         populate(queue, words);
         System.out.println(queue.display());
         reverseQueue(queue);

@@ -21,7 +21,7 @@ public class QuarterPercentList {
         int listLength = (random.nextInt(20) + 10);
 
         StringGenerator sg = new StringGenerator();
-        String[] words = sg.wordList(listLength);
+        String[] words = sg.createWordList(listLength);
         
         populate(randomList, words);
         int size = randomList.getSize();

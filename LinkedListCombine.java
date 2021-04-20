@@ -20,7 +20,6 @@ public class LinkedListCombine
     public static void joinLists(CustomSinglyLinkedList listOne, CustomSinglyLinkedList listTwo)
     {
         listOne.getTail().setNext(listTwo.getHead());
-        listOne.resize();
     }
 
     public static void main (String Args[])

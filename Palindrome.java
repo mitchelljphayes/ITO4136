@@ -1,8 +1,28 @@
 import utils.*;
 import lib.*;
-
+/**
+* Class which satisfies the coding challenge requirement of determining if a given string is a palindrome. 
+* 
+* @author Mitchell Hayes
+* @since 19 April 2021
+* @version 1.0
+*/
 public class Palindrome {
     
+    /**
+     * Static Method which determines if the string held in the dequeue is a palindrome. 
+     * in each iteration the first and last elements are removed and compared, 
+     * this is continues while there is more then one node in the dequeue,
+     * if the two nodes are ever not equal there is no palindrome and the function returns false. 
+     * 
+     * Running time is O(1/2*n) because the algorithm removes two elements in each iteration. 
+     * This is the fastest possible implementation because each element i must be compared with its n-i counter-part,
+     * in order to confirm the presence of a palindrome. The process also terminates as soon as a non-palindrome is detected, 
+     * giving near constant time rejections of non-palindromes. 
+     * 
+     * @param deq a dequeue which has each char of the string being assessed as a node. 
+     * @return a boolean which is true if the dequeue contains a palindrome and false otherwise
+     */
     public static boolean palindromeCheck(CustomDequeue deq)
     {
         Boolean isPalindrome = true;
@@ -19,7 +39,11 @@ public class Palindrome {
         return isPalindrome;
     }
 
-    
+    /**
+     * Main method, acts as driver code for the "algorithm" above. 
+     *  
+     * @param args takes a list of command line args, not used in this program, just convention.
+     */
     public static void main (String[] args)
     {
         while (true)
