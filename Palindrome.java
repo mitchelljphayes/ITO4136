@@ -39,6 +39,15 @@ public class Palindrome {
         return isPalindrome;
     }
 
+    public static void populateDequeue(String word, CustomDequeue deq)
+    {
+        for (int i = 0; i < word.length(); i++)
+        {
+            String str = "" + word.charAt(i);
+            deq.enqueueFront(str);
+        }
+    }
+
     /**
      * Main method, acts as driver code for the "algorithm" above. 
      *  
@@ -46,29 +55,51 @@ public class Palindrome {
      */
     public static void main (String[] args)
     {
+        StringGenerator sg = new StringGenerator();
+        Input in = new Input();
         while (true)
         {    
             CustomDequeue deq = new CustomDequeue();
-            StringGenerator sg = new StringGenerator();
-            String word = new String(sg.sometimesPalindromes());
-            
-            System.out.println(word);
-            for (int i = 0; i < word.length(); i++)
+            String word = "";
+            int choice = in.acceptIntegerInput( "Enter 1 to enter word to check if it is a palindrome."
+                                                + "\nEnter 2 to generate a random palindrome."
+                                                + "\nEnter 3 to generate a random 'word'."
+                                                + "\nEnter 4 to have a 30 % chance of a palindrome."
+                                                + "\nEnter 5 to quit." );
+
+            switch (choice)
             {
-                String str = "" + word.charAt(i);
-                deq.enqueueFront(str);
+                case 1:
+                    word = in.acceptStringInput("Please enter your word");
+                    break;
+
+                case 2:
+                    word = sg.createPalindrome();
+                    break;
+
+                case 3:
+                    word = sg.createWord();
+                    break;
+
+                case 4:
+                    word = sg.sometimesPalindromes();
+                    break;
+                case 5:
+                    System.exit(0);
+                    break;
+                default:
+                    word = in.acceptStringInput("Please enter your word");
             }
-            
+            word = word.trim();
+            populateDequeue(word, deq);
             boolean isPalindrome = palindromeCheck(deq);
             if (isPalindrome)
             {
-                System.out.println("Word IS a palindrome");
-                System.exit(0);
+                System.out.println(word + " IS a palindrome");
             }
             else
             {
-                System.out.println("Word IS NOT a palindrome");
-                System.exit(0);
+                System.out.println(word + " IS NOT a palindrome");
             }
         }
     }

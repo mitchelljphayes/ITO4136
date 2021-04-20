@@ -48,15 +48,49 @@ public class SwapLinkedListNode {
     public static void main(String[] args)
     {
         ArrayGenerator ag = new ArrayGenerator();
-        CustomSinglyLinkedList numList = new CustomSinglyLinkedList();
-        int[] intList = ag.NumsUnder10(8);
-        for (int i = 0; i < intList.length; i++)
+        Input in = new Input();
+        while (true)
         {
-            String s = ("" + intList[i]);
-            numList.addLast(s);
+            CustomSinglyLinkedList numList = new CustomSinglyLinkedList();
+            int[] intList = {};
+            int choice = in.acceptIntegerInput( "Enter 1 to input a list of integers separated by spaces."
+                                            + "\nEnter 2 to generate a random list of integers."
+                                            + "\nEnter 3 to quit." );
+    
+            switch (choice)
+            {
+                case 3:
+                    System.exit(0);
+                    break;
+                    
+                case 2:
+                    int numOfNums = in.acceptIntegerInput("Please enter size of list");
+                    intList = ag.NumsUnder10(numOfNums);
+                    break;
+                    
+                case 1:
+                    String nums = in.acceptStringInput("Please enter a list of integers separated by spaces.");
+                    String[] stringList = nums.split(" ");
+                    intList = new int[stringList.length];
+                    for (int i = 0; i < stringList.length; i++)
+                    {
+                        intList[i] = Integer.parseInt("" + stringList[i]);
+                    } 
+                    break;
+    
+                default:
+                    System.out.println("Invalid input, please enter a number between 1 and 3");
+                    continue;
+            }
+            
+            for (int i = 0; i < intList.length; i++)
+            {
+                String s = ("" + intList[i]);
+                numList.addLast(s);
+            }
+            System.out.println("Starting " + numList.display());
+            swapAdjNodes(numList);
+            System.out.println("Finished " + numList.display());
         }
-        System.out.println("Starting " + numList.display());
-        swapAdjNodes(numList);
-        System.out.println("Finished " + numList.display());
     }
 }

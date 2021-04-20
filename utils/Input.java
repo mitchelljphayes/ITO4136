@@ -38,7 +38,6 @@ public class Input
             System.out.println("an error occurred");
             output = 'e';
         }
-        input.close();
         return output;
     }
 
@@ -62,7 +61,6 @@ public class Input
             System.out.println("an error occurred");
             output = 0.0;
         }
-        input.close();
         return output;
     }
 
@@ -87,7 +85,6 @@ public class Input
             System.out.println("an error occurred");
             output = 0;
         }
-        input.close();
         return output;
     }
 

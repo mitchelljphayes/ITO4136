@@ -1,0 +1,84 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch DuplicateElements",
+            "request": "launch",
+            "mainClass": "DuplicateElements",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch LinkedListCombine",
+            "request": "launch",
+            "mainClass": "LinkedListCombine",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch NoDuplicateCount",
+            "request": "launch",
+            "mainClass": "NoDuplicateCount",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch Palindrome",
+            "request": "launch",
+            "mainClass": "Palindrome",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch ProductString",
+            "request": "launch",
+            "mainClass": "ProductString",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch QuarterPercentList",
+            "request": "launch",
+            "mainClass": "QuarterPercentList",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReverseQueue",
+            "request": "launch",
+            "mainClass": "ReverseQueue",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch ReverseStack",
+            "request": "launch",
+            "mainClass": "ReverseStack",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch SortStack",
+            "request": "launch",
+            "mainClass": "SortStack",
+            "projectName": "Algorithms_a2da3105"
+        },
+        {
+            "type": "java",
+            "name": "Launch SwapLinkedListNode",
+            "request": "launch",
+            "mainClass": "SwapLinkedListNode",
+            "projectName": "Algorithms_a2da3105"
+        }
+    ]
+}
