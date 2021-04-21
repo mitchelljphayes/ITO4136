@@ -10,9 +10,8 @@ import lib.*;
 public class SwapLinkedListNode {
     
     /**
-    *Static Method which takes a CustomSinglyLinkedList and rearanges the nodes such that each adjacent pair of nodes is swapped.
-    *
-    The function is completed in O(1/2 * n) time because it operates in a single pass and the itrator node moves forward two nodes at a time. 
+    * Static Method which takes a CustomSinglyLinkedList and rearanges the nodes such that each adjacent pair of nodes is swapped.
+    * The function is completed in O(1/2 * n) time because it operates in a single pass and the itrator node moves forward two nodes at a time. 
     *
     *@param list a CustomSinglyLinkedList which is to be modified. 
     */
@@ -29,7 +28,7 @@ public class SwapLinkedListNode {
                 list.setHead(next);
             }
             next.setNext(itr);
-            // Beasue the itrator moves forward two nodes at a time, 
+            // Because the itrator moves forward two nodes at a time, 
             // nextNext may be null if the arraylength is even. 
             if ((nextNext == null) || (nextNext.getNext() == null))
             {
